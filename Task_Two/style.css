@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Cairo:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@200;300;500;600;700;800&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* for make all child inside parent */
+    scroll-behavior: smooth;
+}
+
+/*******************************************************************************/
+/* header */
+header {
+    background-color:#5ca5a5 ;
+    width: 100%;
+    height: 156px;
+}
+
+
+.main {
+    z-index: -50;
+    background-color: #effafa;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+}
+
+.cont-cards{
+    margin-top: 70px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* if no space for third card it well go to the next line */
+    padding-top: 0px;}
+
+.card {
+    background-color: #ffffff;
+    width: 1110px;
+    height: 152px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 30px;
+    align-items: center;
+    padding: 0px 30px;
+    box-shadow: -10px 17px 18px -11px #cddadb;
+}
+
+.left-border {
+    border-left: 4px solid #5ca5a5;
+    padding-left: 16px; 
+}
+
+.card-logo {
+    height: 88px;
+    width: 88px;
+    border-radius: 100%;
+    background-image: url(''); 
+    background-size: cover;
+}
+
+.attribute {
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.one {
+    height: 24px;
+    width: 260px;
+    overflow: hidden;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FirstLetter {
+    color: #5ca5a5 ;
+}
+.new {
+    color: white;
+    background-color: #5CA5A5;
+    border-radius: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 100%;
+    margin-left: 12px;
+    margin-right: 4px;
+
+}
+
+.featured {
+    color: white;
+    background-color: #2b3939;
+    border-radius: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+
+    width: 100%;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;    
+}
+
+.two {
+    padding-top: 6px;
+    font-weight: 700;
+    font-size:larger;
+}
+
+.three {
+    padding-top: 6px;
+    color: #7c8f8f;
+    font-size:medium;
+    font-weight: 300;
+    width: 262px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills nav{
+    background-color: #f0f6f6;
+    margin: 10px;
+    color: #5ca5a5;
+    border-radius: 8px;
+    padding: 7px;
+    font-size: small;
+    font-weight: 600;
+}
+
+/* Add this to your existing style.css */
+.search-box {
+    display: flex;
+    background-color: white;
+    position: absolute;
+    top: calc(156px - 72px/2);
+    left: calc((100% - 1110px) / 2);
+    width: 1110px;
+    height: 72px;
+    border-radius: 5px;
+    box-shadow: -10px 17px 18px -11px #cddadb;
+    z-index: 1; /* Place the search box above the cards */
+}
+
+#searchInput {
+    flex-grow: 1;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 8px 8px 28px; /* Adjust the left padding to account for the icon */
+    outline: none;
+    background-color: transparent; /* Make the input background transparent */
+    font-family: inherit; /* Use the parent font */
+    font-size: inherit; /* Use the parent font size */
+}
+
+#clearButton {
+    background-color: white;
+    border: none;
+    width: 150px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5ca5a5;    
+    border-radius: 0px 5px 5px 0px;
+}
+
+#clearButton:hover {
+    background-color: #aaa;
+}
+
+
+::placeholder {
+    color: #5ca5a5;
+    opacity: 1;
+    padding-left: 0px;
+  }
+
+  .cursor-pos {
+    left: 10px;
+  }
+
+
+  /* Add this to your existing CSS */
+.card.fade-in {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card.fade-in.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/************************************************************************/
+
+
+@media (max-width:414px){
+
+    .card {
+        width: 100%;
+    }
+
+
+
+
+
+
+
+
+}
+
