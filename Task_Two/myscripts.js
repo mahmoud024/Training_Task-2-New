@@ -1,7 +1,7 @@
 const cardData = [
-    {logoImage: "/images/1.png", companyName: "Photosnap", isNew: true, isFeatured: true, jobTitle:"Senior Frontend Deve", postedTime:"1d", employmentType:"Full Time", location:"UK Only", skills:["Frontend" , "Senior" , "HTML" , "CSS"]},
-    {logoImage: "/images/2.png", companyName: "Manage", isNew: true, isFeatured: true, jobTitle:"Fullstack Developer", postedTime:"1d", employmentType:"Full Time", location:"USA Only", skills:["Frontend" , "Senior" , "HTML" , "CSS" , "JavaScript"]},
-    {logoImage: "/images/3.png",companyName: "Account", isNew: true, isFeatured: false, jobTitle:"Junior Frontend Deve", postedTime:"2d", employmentType:"Part Time", location:"UK Only", skills:["Frontend" , "Senior" , "HTML" , "CSS"]},
+    {logoImage: "/images/1.png", companyName: "Photosnap1", isNew: true, isFeatured: true, jobTitle:"Senior Frontend Deve", postedTime:"1d", employmentType:"Full Time", location:"UK Only", skills:["Frontend" , "Senior" , "HTML" , "CSS"]},
+    {logoImage: "/images/2.png", companyName: "Manage2", isNew: true, isFeatured: true, jobTitle:"Fullstack Developer", postedTime:"1d", employmentType:"Full Time", location:"USA Only", skills:["Frontend" , "Senior" , "HTML" , "CSS" , "JavaScript"]},
+    {logoImage: "/images/3.png",companyName: "Account3", isNew: true, isFeatured: false, jobTitle:"Junior Frontend Deve", postedTime:"2d", employmentType:"Part Time", location:"UK Only", skills:["Frontend" , "Senior" , "HTML" , "CSS"]},
     {logoImage: "/images/4.png",companyName: "MyHome", isNew: false, isFeatured: false, jobTitle:"Junior Frontend Deve", postedTime:"3d", employmentType:"Part Time", location:"Remote", skills:["HTML" , "CSS" , "JavaScript"]},
     {logoImage: "/images/5.png",companyName: "Loop Studios", isNew:false, isFeatured:false, jobTitle:"Software Engineer", postedTime:"1w", employmentType:"Part Time", location:"UK Only", skills:["Senior" , "HTML", "JavaScript"]},
     {logoImage: "/images/6.png",companyName: "FaceIt", isNew:false, isFeatured: false, jobTitle:"Junior Backend Devel", postedTime:"2d", employmentType:"Full Time", location:"USA Only", skills:["Frontend", "HTML" , "JavaScript"]},
