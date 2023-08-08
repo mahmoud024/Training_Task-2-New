@@ -6,10 +6,10 @@ const cardData = [
     {logoImage: "/images/5.png",companyName: "Loop Studios5", isNew:false, isFeatured:false, jobTitle:"Software Engineer", postedTime:"1w", employmentType:"Part Time", location:"UK Only", skills:["Senior" , "HTML", "JavaScript"]},
     {logoImage: "/images/6.png",companyName: "FaceIt6", isNew:false, isFeatured: false, jobTitle:"Junior Backend Devel", postedTime:"2d", employmentType:"Full Time", location:"USA Only", skills:["Frontend", "HTML" , "JavaScript"]},
     {logoImage: "/images/7.png",companyName: "Shortly7", isNew: false, isFeatured: false, jobTitle:"Junior Developer", postedTime:"3d", employmentType:"Part Time", location:"USA Only", skills:["Senior" , "HTML" , "CSS" , "JavaScript"]},
-    {logoImage: "/images/8.png",companyName: "Insure", isNew:false, isFeatured: false, jobTitle:"Junior Frontend Developer", postedTime:"3w", employmentType:"Full Time", location:"Remote", skills:["Frontend" , "Senior" , "CSS" , "JavaScript"]},
-    {logoImage: "/images/9.png",companyName: "Eyecam Co.", isNew: false, isFeatured: false, jobTitle:"Full Stack Engineer", postedTime:"2w", employmentType:"Full Time", location:"USA Only", skills:["Frontend", "HTML", "JavaScript"]},
-    {logoImage: "/images/10.png",companyName: "The Air Filter Compa", isNew: false, isFeatured: false, jobTitle:"Front-end Dev", postedTime:"5d", employmentType:"Full Time", location:"USA Only", skills:["Senior", "CSS", "JavaScript"]},
-    {logoImage: "x",companyName: "y", isNew: false, isFeatured: false, jobTitle:"z", postedTime:"a", employmentType:"b", location:"c", skills: [""]},
+    {logoImage: "/images/8.png",companyName: "Insure8", isNew:false, isFeatured: false, jobTitle:"Junior Frontend Developer", postedTime:"3w", employmentType:"Full Time", location:"Remote", skills:["Frontend" , "Senior" , "CSS" , "JavaScript"]},
+    {logoImage: "/images/9.png",companyName: "Eyecam Co.9", isNew: false, isFeatured: false, jobTitle:"Full Stack Engineer", postedTime:"2w", employmentType:"Full Time", location:"USA Only", skills:["Frontend", "HTML", "JavaScript"]},
+    {logoImage: "/images/10.png",companyName: "The Air Filter Compa11", isNew: false, isFeatured: false, jobTitle:"Front-end Dev", postedTime:"5d", employmentType:"Full Time", location:"USA Only", skills:["Senior", "CSS", "JavaScript"]},
+    {logoImage: "x",companyName: "y12", isNew: false, isFeatured: false, jobTitle:"z", postedTime:"a", employmentType:"b", location:"c", skills: [""]},
 
 ];
 
