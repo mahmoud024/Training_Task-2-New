@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="jquery-3.7.0.min.js"></script>  
+
+
+</head>
+<body>
+    
+    <!-- header -->
+    <header>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search..." class="basic-form-field cursor-pos">
+            <button id="clearButton"> Clear </button>
+        </div>
+    </header>
+
+    <!-- section -->
+    <section class="main">
+        <div class="cont-cards" id="cardContainer">
+            <div class="content">
+                
+            </div>
+            
+        </div>
+        <br>
+
+    </section>
+    <section class="addNewCard">
+        <button id="addCardButton"><i class="fa-solid fa-plus"></i></button>
+    </section>
+
+    <!--------------------------------------------------------------------------->
+    
+    <div id="addCardPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close" id="popupClose">&times;</span>
+            <label class="addCart" for="popup-content" id="addToCardLabel"> Add New Cart </label>
+            <form action="javascript:void(0);" method="POST" id="saveCardForm">
+
+                <div class="addImage">
+                    <label class="label3" for="avatar">Choose a profile picture </label>
+                    <span id="fileName">No file chosen</span>
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+                </div>
+
+                <div class="twoColumn">
+                    <div class="firstColumn">
+                        <div class="Companyname">
+                            <label class="label" >Company Name</label>
+                            <input class="compholder" type="text" required placeholder="Name" name="user" autofocus>
+                        </div>
+        
+                        <div class="isnew">
+                            <label class="label" >is New</label>
+                            <span>
+                                <div>
+                                    <input type="radio" id="yes" name="isNew" value="Yes">
+                                    <label for="yes" class="label2">Yes</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" id="no" name="isNew" value="No">
+                                    <label for="no" class="label2">No</label><br>
+                                </div>
+                            </span>
+                        </div>
+        
+        
+                        <div class="isnew">
+                            <label class="label">Is Featured</label>
+                            <span>
+                                <div>
+                                    <input type="radio" id="yes" name="isFeatured" value="Yes">
+                                    <label for="yes" class="label2">Yes</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" id="no" name="isFeatured" value="No">
+                                    <label for="no" class="label2" >No</label><br>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="country">
+                            <label for="form-select" class="label"> Country </label>
+                            <select class="form-select" id="country" name="country">
+                                <option>select country</option>
+                                <option value="NO">Norway</option>
+                                <option value="OM">Oman</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="PW">Palau</option>
+                                <option value="PS">Palestinian Territory, Occupied</option>
+                                <option value="PA">Panama</option>
+                                <option value="PG">Papua New Guinea</option>
+                                <option value="TO">Tonga</option>
+                                <option value="TT">Trinidad and Tobago</option>
+                                <option value="TN">Tunisia</option>
+                            </select>
+                        </div>
+                    </div>
+    
+    
+                    <div class="secondColumn">
+                        <div class="Companyname">
+                            <label class="label" >Job Title</label>
+                            <input class="jobtitle" type="text" placeholder="Name" name="user" autofocus>
+                        </div>
+        
+                        <div class="posttime">
+                            <label class="label" > Posted Time </label>
+                            <input class="posttimee" placeholder="Select a date" type="date">
+                        </div>
+        
+                        <div class="employeetype">
+                            <label class="label">Employee Type</label>
+                            <div>
+                                <div class="parttime">
+                                    <input type="radio" id="part" name="employeetype" value="parttime">
+                                    <label for="part" class="label2">Part-Time</label>
+                                </div>
+                                <div class="fulltime">
+                                    <input type="radio" id="full" name="employeetype" value="fulltime">
+                                    <label for="full" class="label2" >Full-Time</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="skillss">
+                            <label for="" class="label"> skills </label>
+                            <div class="firstColumn">
+                                <div>
+                                    <input class="radiocircle" id="win1" type="checkbox" name="OS" value="Frontend">
+                                    <label for="win1" class="label2">Frontend</label>
+                                </div>
+                                <div>
+                                    <input class="radiocircle" id="lin1" type="checkbox" name="OS" value="Senior">
+                                    <label for="lin1" class="label2" >Senior</label>
+                                </div>
+                                <div>
+                                    <input  class="radiocircle" id="mac1" type="checkbox" name="OS" value="JavaScript">
+                                    <label for="mac1" class="label2">JavaScript</label>
+                                </div>
+                            </div>
+
+                            <div class="secondColumn">
+                                <div>
+                                    <input class="radiocircle" id="mac1" type="checkbox" name="OS" value="HTML">
+                                    <label for="mac1" class="label2">HTML</label>
+                                </div>
+                                <div>
+                                    <input class="radiocircle" id="mac1" type="checkbox" name="OS" value="CSS">
+                                    <label for="mac1" class="label2" >CSS</label>
+                                </div>
+                                <div>
+                                    <input class="radiocircle" id="mac1" type="checkbox" name="OS" value="BackEnd">
+                                    <label for="mac1" class="label2">BackEnd</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                
+                
+                
+                <div class="saveClass">
+                    <input class="save" type="submit" value="save">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="myscripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+const cardData = [];
+
+const cardContainer = document.getElementById("cardContainer");
+
+
+
+// Just For POPUP Window
+$(document).ready(function() {
+    const addCardPopup = document.getElementById("addCardPopup");
+    const addCardButton = document.getElementById("addCardButton");
+    const popupClose = document.getElementById("popupClose");
+
+    addCardButton.addEventListener("click", function() {
+        addCardPopup.style.display = "block";
+    });
+
+    popupClose.addEventListener("click", function() {
+        addCardPopup.style.display = "none";
+    });
+});
+
+
+
+// Create New Card
+function createCard(data,index) {
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card");
+
+    if (index < 1) {
+        cardDiv.classList.add("left-border");
+    };
+
+
+    const cardContent = `
+        <div class="data">
+            <div class="logo card-logo" style="background-image: url('${data.logoImage}');">
+                
+            </div>
+            <div class="attribute">
+                <div class="one">
+                    <span class="FirstLetter">${data.companyName}</span>
+                    ${data.isNew ? '<span class="new">NEW!</span>' : ''}
+                    ${data.isFeatured ? '<span class="featured">FEATURED</span>' : ''}
+                </div>
+                <div class="two">
+                    ${data.jobTitle}
+                </div>
+                <div class="three">
+                    <span class="day">${data.postedTime}</span>&nbsp;&nbsp; . &nbsp;
+                    <span class="time">${data.employmentType}</span>&nbsp; . &nbsp;
+                    <span class="country">${data.location}</span>
+                </div>
+            </div>
+        </div>
+        <div class="skills">
+            ${data.skills.map(skill => `<nav>${skill}</nav>`).join('')}
+        </div>
+        <div class="edit-button">
+            <button class="edit">
+            <i class="fa-solid fa-less-than"></i>
+            </button>
+            <button class="update hide">
+            <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="delete hide">
+            <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+        `;
+
+    cardDiv.innerHTML = cardContent;
+    setupEditButtonAnimation(cardDiv);
+
+    cardContainer.appendChild(cardDiv);
+}
+
+
+
+
+
+
+
+
+
+// To Save Card
+$(document).ready(function() {
+    var ids = 0;
+    
+    for (const card of cardData) {
+        ids = card.ids;
+    }
+
+    $(".save").click(function() {
+        ids++;
+
+        var images = $("#fileName").val();
+        var companyName = $(".compholder").val();
+        var isNew = $("input[name='isNew']:checked").val();
+        var isFeatured = $("input[name='isFeatured']:checked").val();
+        var country = $("#country").val();
+        var jobTitle = $(".jobtitle").val();
+        var postedTime = $("input[type='date']").val();
+        var employeeType = $("input[name='employeetype']:checked").val();
+        
+        var skills = [];
+        $("input[name='OS']:checked").each(function() {
+            skills.push($(this).val());
+        });
+
+        const obj = {ids:ids ,logoImage: "./images/profile.png",companyName: companyName, isNew: isNew, isFeatured: isFeatured, jobTitle:jobTitle, postedTime:postedTime, employmentType:employeeType, location:country, skills:skills};
+        cardData.push(obj);
+
+        const newIndex = cardData.length - 1;
+        createCard(cardData[newIndex], newIndex);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Search operation
+const searchInput = document.getElementById("searchInput");
+const clearButton = document.getElementById("clearButton");
+
+for (let i = 0; i < cardData.length; i++) {
+
+    createCard(cardData[i], i);
+}
+
+function filterAndDisplayCards(searchTerm) {
+    cardContainer.innerHTML = ""; 
+
+    const filteredData = cardData.filter(data =>
+        data.jobTitle.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    for (let i = 0; i < filteredData.length; i++) {
+        createCard(filteredData[i], i);
+    }
+}
+
+searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.trim();
+    filterAndDisplayCards(searchTerm);
+});
+
+clearButton.addEventListener("click", () => {
+    searchInput.value = "";
+    filterAndDisplayCards(""); 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// For Choose File 
+const avatarInput = document.getElementById('avatar');
+const fileNameSpan = document.getElementById('fileName');
+avatarInput.addEventListener('change', function () {
+    fileNameSpan.textContent = this.files[0] ? this.files[0].name : 'No file chosen';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function setupEditButtonAnimation(cardDiv) {
+    const editButton = cardDiv.querySelector('.edit-button');
+    const deleteButton = cardDiv.querySelector('.delete');
+    const updateButton = cardDiv.querySelector('.update');
+
+    editButton.addEventListener('click', () => {
+        deleteButton.classList.toggle('show');
+        updateButton.classList.toggle('show');
+        const isActive = deleteButton.classList.contains('show');
+        editButton.querySelector('.edit').classList.toggle('active', isActive);
+    });
+}
+
+
+
+
+/*
+{ids:1 ,logoImage: "./images/1.png",companyName: 'Mahmoud', isNew: yes, isFeatured: yes, jobTitle:'Front-End Developer', postedTime:'3-9-2023', employmentType:'Full-Time', location: 'PS', skills:['HTML' , 'CSS', 'Java_Script']},
+{ids:2 ,logoImage: "./images/1.png",companyName: 'Atia', isNew: yes, isFeatured: yes, jobTitle:'Front-End Developer', postedTime:'3-9-2023', employmentType:'Full-Time', location: 'PS', skills:['HTML' , 'CSS', 'Java_Script']},
+{ids:2 ,logoImage: "./images/1.png",companyName: 'Ali', isNew: yes, isFeatured: yes, jobTitle:'Front-End Developer', postedTime:'3-9-2023', employmentType:'Full-Time', location: 'PS', skills:['HTML' , 'CSS', 'Java_Script']},
+{ids:2 ,logoImage: "./images/1.png",companyName: 'Musatfa', isNew: yes, isFeatured: yes, jobTitle:'Front-End Developer', postedTime:'3-9-2023', employmentType:'Full-Time', location: 'PS', skills:['HTML' , 'CSS', 'Java_Script']},
+*/

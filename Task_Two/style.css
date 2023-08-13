@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Cairo:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@200;300;500;600;700;800&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* for make all child inside parent */
+    scroll-behavior: smooth;
+}
+
+/*******************************************************************************/
+/* header */
+header {
+    background-color:#5ca5a5 ;
+    width: 100%;
+    height: 156px;
+}
+
+.main {
+    z-index: -50;
+    background-color: #effafa;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+}
+
+.cont-cards{
+    margin-top: 70px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* if no space for third card it well go to the next line */
+    padding-top: 0px;}
+
+.card {
+    background-color: #ffffff;
+    width: 1110px;
+    height: 152px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 30px;
+    align-items: center;
+    padding: 0px 30px;
+    padding-right: 0px;
+    box-shadow: -10px 17px 18px -11px #cddadb;
+}
+
+.left-border {
+    border-left: 4px solid #5ca5a5;
+    padding-left: 16px; 
+}
+
+.card-logo {
+    height: 88px;
+    width: 88px;
+    border-radius: 100%;
+    background-image: url(''); 
+    background-size: cover;
+}
+
+.attribute {
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.one {
+    height: 24px;
+    width: 260px;
+    overflow: hidden;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FirstLetter {
+    color: #5ca5a5 ;
+}
+.new {
+    color: white;
+    background-color: #5CA5A5;
+    border-radius: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 100%;
+    margin-left: 12px;
+    margin-right: 4px;
+
+}
+
+.featured {
+    color: white;
+    background-color: #2b3939;
+    border-radius: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+
+    width: 100%;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;    
+}
+
+.two {
+    padding-top: 6px;
+    font-weight: 700;
+    font-size:larger;
+}
+
+.three {
+    padding-top: 6px;
+    color: #7c8f8f;
+    font-size:medium;
+    font-weight: 300;
+    width: 262px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills nav{
+    background-color: #f0f6f6;
+    margin: 10px;
+    color: #5ca5a5;
+    border-radius: 8px;
+    padding: 7px;
+    font-size: small;
+    font-weight: 600;
+}
+
+/* Add this to your existing style.css */
+.search-box {
+    display: flex;
+    background-color: white;
+    position: absolute;
+    top: calc(156px - 72px/2);
+    left: calc((100% - 1110px) / 2);
+    width: 1110px;
+    height: 72px;
+    border-radius: 5px;
+    box-shadow: -10px 17px 18px -11px #cddadb;
+    z-index: 1; /* Place the search box above the cards */
+}
+
+#searchInput {
+    flex-grow: 1;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 8px 8px 28px; /* Adjust the left padding to account for the icon */
+    outline: none;
+    background-color: transparent; /* Make the input background transparent */
+    font-family: inherit; /* Use the parent font */
+    font-size: inherit; /* Use the parent font size */
+}
+
+#clearButton {
+    background-color: white;
+    border: none;
+    width: 150px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5ca5a5;    
+    border-radius: 0px 5px 5px 0px;
+}
+
+#clearButton:hover {
+    background-color: #aaa;
+}
+
+
+::placeholder {
+    color: #5ca5a5;
+    opacity: 1;
+    padding-left: 0px;
+}
+
+.compholder::placeholder {
+    color: #717171;
+}
+.Companyname input::placeholder {
+    color: #717171;
+}
+
+.cursor-pos {
+left: 10px;
+}
+
+
+  /* Add this to your existing CSS */
+.card.fade-in {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card.fade-in.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.addNewCard {
+    display: flex;
+    justify-content: center;
+    background-color: #effafa;
+}
+
+.addNewCard button{
+    height: 120px;
+    width: 120px;
+    margin: 20px;
+    background-color: #5CA5A5;
+    border: none;
+    border-radius: 30px;
+}
+.addNewCard button:hover {
+    background-color: #6bc0c0;
+}
+.addNewCard button:active {
+    background-color: #5CA5A5;
+    transform: translateY(4px);
+}
+
+.fa-solid{
+    font-size: 90px;
+    color: #ffffff;
+}
+
+/************************/
+
+
+/* Pop-up overlay styles */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Pop-up content styles */
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button styles */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+
+.label {
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 5px;
+}
+.label2 {
+    font-weight: 200;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+#saveCardForm {
+    margin: 25px;
+}
+
+#avatar {
+    margin-left: 85px;
+    padding-left: 38px;
+    width: 225px;
+}
+
+.addImage {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.twoColumn {
+    display: flex;
+    flex-direction: row;
+}
+
+.firstColumn {
+    width: 50%;
+    padding-right: 10px;
+}
+.secondColumn {
+    width: 50%;
+    padding-left: 10px;
+}
+
+
+.Companyname {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 73px;
+}
+
+.Companyname input {
+    margin-top: 3px;
+    width: 100%;
+    height: 100%;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+
+
+.isnew {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.isnew span {
+    display: flex;
+}
+
+.isnew span div{
+    padding-right: 100px;
+}
+
+.posttime {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.posttime input {
+    margin-top: 5px;
+    margin-top: 5px;
+    height: 40px;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.posttime input[type="date"]::placeholder {
+    color: #717171;
+}
+
+.radiocircle {
+    margin-right: 10px;
+}
+
+.employeetype {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.employeetype div{
+    display: flex;
+    flex-direction: row;
+}
+
+.parttime {
+    display: flex;
+    flex-direction: row;
+    width: 447px;
+}
+
+.fulltime {
+    width: 100%;
+}
+
+.country {
+    display: flex;
+    flex-direction: column;
+}
+
+.addCart {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.form-select {
+    height: 40px;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.save {
+    margin-top: 20px;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.save:hover {
+    background-color: #d0d0d0;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.saveClass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skillss {
+    display: flex;
+    flex-direction: row;
+    padding-right: 0px;
+}
+
+.skillss div {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+}
+
+
+.skillss .firstColumn {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    padding-left: 37px;
+}
+.skillss .secondColumn {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+.addImage {
+    margin-bottom: 20px;
+}
+
+.label3 {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.label3:hover {
+    background-color: #0056b3;
+}
+
+#avatar {
+    display: none;
+}
+
+#fileName {
+    position: absolute;
+    top: 78px;
+    left: 273px;
+    padding: 10px;
+}
+
+/******************* edit button *******************/
+
+.edit-button .edit {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 30px 0px 0px 30px;
+    color: #5ca5a5;
+    width: 30px;
+    transition: width 0.4s ease;
+
+}
+
+.delete,.update {
+    display: none;
+}
+
+.edit-button {
+    background-color: #dfeded;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+.edit-button .edit i{
+    color: #5CA5A5;
+    font-size: 16px;
+    width: 20px;
+    display: flex;
+}
+
+.edit {
+    overflow: hidden;
+    width: 20px; /* Set the initial width */
+}
+
+.edit.active {
+    width: 50px; /* Set the new width when active */
+}
+
+.hide {
+    transition: width 0.4s ease;
+    display: none;
+}
+
+.show {
+    display: block;
+
+} 
+
+
+.update {
+    height: inherit;
+    width: 54px;
+    background-color: #d5ffd378;
+    border: none;
+}
+.delete {
+    height: inherit;
+    width: 54px;
+    background-color: #ffcece75;
+    border: none;
+}
+.update i{
+    color: #5CA5A5;
+    font-size: 40px;
+}
+.delete i{
+    color: #5CA5A5;
+    font-size: 40px;
+}
